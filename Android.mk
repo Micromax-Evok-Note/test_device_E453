@@ -20,5 +20,8 @@ ifeq ($(TARGET_DEVICE),E453)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
+# Prebuilt kernel
+$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
+
 endif
 
