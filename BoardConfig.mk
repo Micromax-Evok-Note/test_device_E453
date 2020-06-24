@@ -16,15 +16,11 @@
 
 LOCAL_PATH := device/micromax/E453
 
-# Device board elements
-include $(LOCAL_PATH)/PlatformConfig.mk
-
-#TODO:
 # Device vendor board
-#include vendor/micromax/E453/BoardConfigVendor.mk
+include vendor/micromax/E453/BoardConfigVendor.mk
 
-#TODO:
-#include $(LOCAL_PATH)/board/*.mk
+
+include $(LOCAL_PATH)/board/*.mk
 
 # BOOTLOADER
 TARGET_NO_BOOTLOADER := true
@@ -73,6 +69,7 @@ BOARD_HAS_FLIPPED_SCREEN := true
 BOARD_HAS_NO_MISC_PARTITION := true
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_HAS_LARGE_FILESYSTEM := true
+TARGET_PROVIDES_INIT_RC := true
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
@@ -86,10 +83,6 @@ TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 # USB Mounting
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun0/file
-
-
-TARGET_PROVIDES_INIT_RC := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun0/file
  
 # EGL
 BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
