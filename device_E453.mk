@@ -14,13 +14,11 @@
 # limitations under the License.
 #
 
-#TODO:
 # Device product elements
-#include $(LOCAL_PATH)/product/*.mk
+include $(LOCAL_PATH)/product/*.mk
 
-#TODO:
 # Vendor product configurations
-#$(call inherit-product-if-exists, vendor/micromax/E453/E453-vendor.mk)
+$(call inherit-product-if-exists, vendor/micromax/E453/E453-vendor.mk)
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
