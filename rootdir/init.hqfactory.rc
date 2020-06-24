@@ -1,0 +1,48 @@
+# for change_pmic_mode_on
+service runinbatteryon /system/bin/runinbatteryon
+    user root
+    oneshot
+    disabled
+    on property:sys.runinbatteryon=1
+    start runinbatteryon
+
+# for change_pmic_mode_off
+service runinbatteryoff /system/bin/runinbatteryoff
+    user root
+    oneshot
+    disabled
+    on property:sys.runinbatteryoff=1
+    start runinbatteryoff
+
+#add for runin nvram
+service nvram_country /system/bin/nvram_country
+    user root
+    oneshot
+    disabled
+    on property:service.nvram_init=Ready
+    start nvram_country
+    
+    
+# for change_smartpa_mode_on
+service fktsmartpaon /system/bin/fktsmartpaon
+    user root
+    oneshot
+    disabled
+    on property:sys.fktsmartpaon=1
+    start fktsmartpaon
+
+# for change_smartpa_mode_off
+service fktsmartpaoff /system/bin/fktsmartpaoff
+    user root
+    oneshot
+    disabled
+    on property:sys.fktsmartpaoff=1
+    start fktsmartpaoff
+    
+# for smartpa_switch
+service smartpainterface /system/bin/smartpainterface
+    user root
+    oneshot
+    disabled
+    on property:sys.smartpainterface=1
+    start smartpainterface
