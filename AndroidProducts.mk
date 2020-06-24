@@ -1,0 +1,1 @@
+PRODUCT_MAKEFILES := $(LOCAL_PATH)/device_E453.mk
